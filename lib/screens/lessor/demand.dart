@@ -1,47 +1,46 @@
 import 'package:flutter/material.dart';
 
 class DemandPage extends StatelessWidget {
-  const DemandPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Demand Page'),
-      ),
-      body: ListView.builder(
-        itemCount: 10, // Replace with actual count
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            padding: EdgeInsets.all(16.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Product Name',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16.0,
-                  ),
-                ),
-                SizedBox(height: 8.0),
-                Text(
-                  'Count: 5', // Replace with actual count
-                  style: TextStyle(
-                    fontSize: 14.0,
-                  ),
-                ),
-                SizedBox(height: 16.0),
-                ElevatedButton(
-                  onPressed: () {
-                    // Do something when button is pressed
-                  },
-                  child: Text('View'),
-                ),
-              ],
+      body: SingleChildScrollView(
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Product Name',
+                style: TextStyle(fontSize: 20),
+              ),
             ),
-          );
-        },
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Product Type',
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                width: 20,
+                height: 20,
+                decoration: BoxDecoration(
+                  color: Colors.deepOrange.shade800,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(
+                  child: Text(
+                    '5',
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

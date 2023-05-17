@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:therental/screens/lessor/demand.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -79,15 +80,6 @@ class _HomePageState extends State<HomePage> {
         selectedItemColor: Colors.blue,
         onTap: _onItemTapped,
       ),
-    );
-  }
-}
-
-class DemandPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Demand Page'),
     );
   }
 }
