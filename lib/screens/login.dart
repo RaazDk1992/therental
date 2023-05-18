@@ -13,7 +13,9 @@ class LoginPage extends StatelessWidget {
             child: SafeArea(
                 child: Column(
               children: [
-                Container(),
+                Container(
+                  child: Image.asset("assets/images/banner.gif"),
+                ),
                 Form(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -35,6 +37,19 @@ class LoginPage extends StatelessWidget {
                       SizedBox(height: 32),
                       ElevatedButton(
                         child: Text('Login'),
+                        onPressed: () {
+                          // TODO: Implement login logic
+                        },
+                      ),
+                      const Text('OR,'),
+                      ElevatedButton(
+                        child: Text(
+                          'Continue as Guest',
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red, // Background color
+                        ),
                         onPressed: () {
                           // TODO: Implement login logic
                         },
