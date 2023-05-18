@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:therental/assets/constants/fontsize.dart' as fS;
+import 'package:therental/constants/fontsize.dart' as fS;
 
 class DemandPage extends StatelessWidget {
   @override
