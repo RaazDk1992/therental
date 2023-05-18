@@ -22,13 +22,13 @@ class _PostAProductPageState extends State<PostAProductPage> {
                 'Name',
                 style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8.0),
-              TextField(
+              const SizedBox(height: 8.0),
+              const TextField(
                 decoration: InputDecoration(
                   hintText: 'Enter name',
                 ),
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               Text(
                 'Type',
                 style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),

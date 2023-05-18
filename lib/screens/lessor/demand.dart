@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:therental/assets/constants/fontsize.dart' as fS;
 
 class DemandPage extends StatelessWidget {
   @override
@@ -10,15 +11,15 @@ class DemandPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                'Product Name',
-                style: TextStyle(fontSize: 20),
+                'Produc',
+                style: const TextStyle(fontSize: 30),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(
+              child: const Text(
                 'Product Type',
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: fS.FONTSIZE_MEDIUM),
               ),
             ),
             Padding(
