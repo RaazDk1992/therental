@@ -26,7 +26,10 @@ class CodegenLoader extends AssetLoader{
   "email": "e-mail",
   "phone": "Phone",
   "password": "Password",
-  "firstnamevalidator": "Please enter your first name"
+  "firstnamevalidator": "Please enter your first name",
+  "clothing": "Clothing",
+  "house": "House",
+  "retail": "Retail"
 };
 static const Map<String,dynamic> ne = {
   "login": "लग-इन",
@@ -39,7 +42,10 @@ static const Map<String,dynamic> ne = {
   "email": "ई-मेल",
   "phone": "फोन",
   "password": "पासवर्ड",
-  "firstnamevalidator": "कृपया आफ्नो नाम प्रविष्ट गर्नुहोस्"
+  "firstnamevalidator": "कृपया आफ्नो नाम प्रविष्ट गर्नुहोस्",
+  "clothing": "कपडा",
+  "house": "घर",
+  "retail": "जग्गा"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "ne": ne};
 }

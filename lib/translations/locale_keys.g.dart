@@ -13,5 +13,8 @@ abstract class  LocaleKeys {
   static const phone = 'phone';
   static const password = 'password';
   static const firstnamevalidator = 'firstnamevalidator';
+  static const clothing = 'clothing';
+  static const house = 'house';
+  static const retail = 'retail';
 
 }

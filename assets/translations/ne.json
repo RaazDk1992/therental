@@ -9,5 +9,8 @@
     "email":"ई-मेल",
     "phone":"फोन",
     "password":"पासवर्ड",
-    "firstnamevalidator": "कृपया आफ्नो नाम प्रविष्ट गर्नुहोस्"
+    "firstnamevalidator": "कृपया आफ्नो नाम प्रविष्ट गर्नुहोस्",
+    "clothing":"कपडा",
+    "house": "घर",
+    "retail": "जग्गा"
  }

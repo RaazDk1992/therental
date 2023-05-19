@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:therental/screens/lessor/demand.dart';
+import 'package:therental/screens/lessor/request.dart';
 import 'package:therental/screens/search.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,7 +13,7 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _widgetOptions = [
     DemandPage(),
-    RequestsPage(),
+    RequestPage(),
     SuggestionsPage(),
     PostProductPage(),
   ];
@@ -93,15 +94,6 @@ class _HomePageState extends State<HomePage> {
         selectedItemColor: Colors.blue,
         onTap: _onItemTapped,
       ),
-    );
-  }
-}
-
-class RequestsPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Requests Page'),
     );
   }
 }

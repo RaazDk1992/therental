@@ -8,11 +8,11 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Login Page'),
+          title: const Text('Login Page'),
         ),
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.all(3.0),
+            padding: const EdgeInsets.all(3.0),
             child: SafeArea(
                 child: Column(
               children: [
@@ -30,18 +30,25 @@ class LoginPage extends StatelessWidget {
                             border: OutlineInputBorder(),
                           ),
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         TextFormField(
                           obscureText: true,
                           decoration: InputDecoration(
                             labelText: LocaleKeys.Password.tr(),
-                            border: OutlineInputBorder(),
+                            border: const OutlineInputBorder(),
                           ),
                         ),
-                        SizedBox(height: 32),
+                        const SizedBox(height: 32),
                         ElevatedButton(
-                            child: Text(LocaleKeys.login.tr()),
-                            onPressed: () {}),
+                          child: Text(LocaleKeys.login.tr()),
+                          onPressed: () {
+                            try {
+                              Navigator.pushNamed(context, homePage);
+                            } catch (e) {
+                              //print(e.toString());
+                            }
+                          },
+                        ),
                         const Text('OR,'),
                         ElevatedButton(
                           child: Text(
@@ -51,17 +58,8 @@ class LoginPage extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.red, // Background color
                           ),
-                          /*
                           onPressed: () async {
                             await context.setLocale(Locale('ne'));
-                          },*/
-
-                          onPressed: () {
-                            try {
-                              Navigator.pushNamed(context, homePage);
-                            } catch (e) {
-                              print(e.toString());
-                            }
                           },
                         ),
                       ],

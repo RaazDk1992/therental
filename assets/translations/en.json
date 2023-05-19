@@ -10,6 +10,9 @@
    "email":"e-mail",
    "phone":"Phone",
    "password":"Password",
-   "firstnamevalidator": "Please enter your first name"
+   "firstnamevalidator": "Please enter your first name",
+   "clothing":"Clothing",
+   "house": "House",
+   "retail": "Retail"
 
 }
