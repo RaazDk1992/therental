@@ -4,6 +4,8 @@ import 'package:therental/constants/fontsize.dart' as fS;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:therental/constants/sizes.dart';
 
+import '../../constants/fontsize.dart';
+
 class DemandPage extends StatelessWidget {
   static const List<String> items = ['product 1', 'product 2'];
   static const List<String> publisher = ['x', 'y'];
@@ -26,6 +28,7 @@ class DemandPage extends StatelessWidget {
                 const SizedBox(width: SIZE_SMALL),
                 const FaIcon(
                   FontAwesomeIcons.tags,
+                  size: FONTSIZE_MEDIUM,
                   color: Color.fromARGB(255, 0, 121, 107),
                 ),
                 const SizedBox(
@@ -37,6 +40,7 @@ class DemandPage extends StatelessWidget {
                 ),
                 const FaIcon(
                   FontAwesomeIcons.user,
+                  size: FONTSIZE_MEDIUM,
                   color: Color.fromARGB(255, 0, 121, 107),
                 ),
                 const SizedBox(
@@ -65,6 +69,7 @@ class DemandPage extends StatelessWidget {
                 ),
                 const FaIcon(
                   FontAwesomeIcons.coins,
+                  size: FONTSIZE_MEDIUM,
                   color: Color.fromARGB(255, 0, 121, 107),
                 ),
                 const SizedBox(
@@ -74,6 +79,13 @@ class DemandPage extends StatelessWidget {
                 SizedBox(
                   width: SIZE_SMALL,
                 ),
+                IconButton(
+                    onPressed: () {},
+                    icon: const FaIcon(
+                      FontAwesomeIcons.eye,
+                      size: FONTSIZE_MEDIUM,
+                      color: Color.fromARGB(255, 0, 121, 107),
+                    ))
               ],
             ),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:therental/screens/lessor/demand.dart';
+import 'package:therental/screens/search.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -27,6 +28,18 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              // method to show the search bar
+              showSearch(
+                  context: context,
+                  // delegate to customize the search bar
+                  delegate: SearchInTheRental());
+            },
+            icon: const Icon(Icons.search),
+          )
+        ],
       ),
       drawer: Drawer(
         child: ListView(
