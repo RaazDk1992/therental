@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:therental/main.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:therental/routes/constraints.dart';
 import 'package:therental/translations/locale_keys.g.dart';
 
 class LoginPage extends StatelessWidget {
@@ -51,8 +51,17 @@ class LoginPage extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.red, // Background color
                           ),
+                          /*
                           onPressed: () async {
                             await context.setLocale(Locale('ne'));
+                          },*/
+
+                          onPressed: () {
+                            try {
+                              Navigator.pushNamed(context, homePage);
+                            } catch (e) {
+                              print(e.toString());
+                            }
                           },
                         ),
                       ],

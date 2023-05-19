@@ -1,7 +1,8 @@
+import 'package:therental/screens/lessor/home.dart';
+
 import 'constraints.dart';
 
 import 'package:flutter/material.dart';
-import 'package:therental/screens/lessee/home.dart';
 import 'package:therental/screens/login.dart';
 import 'package:therental/screens/register.dart';
 
