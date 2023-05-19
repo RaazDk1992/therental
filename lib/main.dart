@@ -1,20 +1,38 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:therental/screens/lessor/home.dart';
-import 'package:therental/screens/lessor/profile.dart';
-import 'package:therental/screens/lessor/demand.dart';
 import 'package:therental/screens/login.dart';
-import 'package:therental/screens/register.dart';
+import 'package:therental/translations/codegen_loader.g.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(
+    EasyLocalization(
+        supportedLocales: const [Locale('en'), Locale('ne')],
+        path:
+            'assets/translations', // <-- change the path of the translation files
+        fallbackLocale: const Locale('en'),
+        assetLoader: CodegenLoader(),
+        child: const RentalApp()),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class RentalApp extends StatefulWidget {
+  const RentalApp({super.key});
 
-  // This widget is the root of your application.
+  @override
+  _RentalAppState createState() => _RentalAppState();
+  static _RentalAppState? of(BuildContext context) =>
+      context.findAncestorStateOfType<_RentalAppState>();
+}
+
+class _RentalAppState extends State<RentalApp> {
+  // Locale _locale = Locale.fromSubtags('en');
+
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return MaterialApp(
       title: 'The Rental',
       theme: ThemeData(
@@ -29,6 +47,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+      locale: context.locale,
+      supportedLocales: context.supportedLocales,
+      localizationsDelegates: context.localizationDelegates,
       home: LoginPage(),
     );
   }

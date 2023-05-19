@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:therental/main.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:therental/translations/locale_keys.g.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -16,45 +19,43 @@ class LoginPage extends StatelessWidget {
                 Container(
                   child: Image.asset("assets/images/banner.gif"),
                 ),
-                Form(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      TextFormField(
-                        decoration: InputDecoration(
-                          labelText: 'Username',
-                          border: OutlineInputBorder(),
+                Material(
+                  child: Form(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextFormField(
+                          decoration: InputDecoration(
+                            labelText: 'Username',
+                            border: OutlineInputBorder(),
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 16),
-                      TextFormField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          labelText: 'Password',
-                          border: OutlineInputBorder(),
+                        SizedBox(height: 16),
+                        TextFormField(
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            labelText: 'Password',
+                            border: OutlineInputBorder(),
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 32),
-                      ElevatedButton(
-                        child: Text('Login'),
-                        onPressed: () {
-                          // TODO: Implement login logic
-                        },
-                      ),
-                      const Text('OR,'),
-                      ElevatedButton(
-                        child: Text(
-                          'Continue as Guest',
-                          style: const TextStyle(color: Colors.white),
+                        SizedBox(height: 32),
+                        ElevatedButton(
+                            child: Text('language'), onPressed: () {}),
+                        const Text('OR,'),
+                        ElevatedButton(
+                          child: Text(
+                            LocaleKeys.greetings.tr(),
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.red, // Background color
+                          ),
+                          onPressed: () async {
+                            await context.setLocale(Locale('ne'));
+                          },
                         ),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red, // Background color
-                        ),
-                        onPressed: () {
-                          // TODO: Implement login logic
-                        },
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
