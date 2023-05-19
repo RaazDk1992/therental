@@ -1,3 +1,15 @@
 {
-   "greetings":"hellow"
+   "login":"Login",
+   "register": "Register",
+   "useasguest": "Use as a Guest",
+   "Username":"UserName",
+   "search":"Search",
+   "Password":"Password",
+   "firstname":"First Name",
+   "lastname":"Last Name",
+   "email":"e-mail",
+   "phone":"Phone",
+   "password":"Password",
+   "firstnamevalidator": "Please enter your first name"
+
 }

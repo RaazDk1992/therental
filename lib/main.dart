@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:therental/routes/approutes.dart';
 import 'package:therental/screens/login.dart';
 import 'package:therental/translations/codegen_loader.g.dart';
 
@@ -13,7 +14,7 @@ void main() async {
         path:
             'assets/translations', // <-- change the path of the translation files
         fallbackLocale: const Locale('en'),
-        assetLoader: CodegenLoader(),
+        assetLoader: const CodegenLoader(),
         child: const RentalApp()),
   );
 }
@@ -35,6 +36,7 @@ class _RentalAppState extends State<RentalApp> {
     // TODO: implement build
     return MaterialApp(
       title: 'The Rental',
+      onGenerateRoute: AppRoutes.generateRoute,
       theme: ThemeData(
         // This is the theme of your application.
         //

@@ -26,7 +26,7 @@ class LoginPage extends StatelessWidget {
                       children: [
                         TextFormField(
                           decoration: InputDecoration(
-                            labelText: 'Username',
+                            labelText: LocaleKeys.Username.tr(),
                             border: OutlineInputBorder(),
                           ),
                         ),
@@ -34,17 +34,18 @@ class LoginPage extends StatelessWidget {
                         TextFormField(
                           obscureText: true,
                           decoration: InputDecoration(
-                            labelText: 'Password',
+                            labelText: LocaleKeys.Password.tr(),
                             border: OutlineInputBorder(),
                           ),
                         ),
                         SizedBox(height: 32),
                         ElevatedButton(
-                            child: Text('language'), onPressed: () {}),
+                            child: Text(LocaleKeys.login.tr()),
+                            onPressed: () {}),
                         const Text('OR,'),
                         ElevatedButton(
                           child: Text(
-                            LocaleKeys.greetings.tr(),
+                            LocaleKeys.useasguest.tr(),
                             style: const TextStyle(color: Colors.white),
                           ),
                           style: ElevatedButton.styleFrom(

@@ -1,3 +1,13 @@
 {
-    "greetings":"नमस्ते"
+    "login":"लग-इन",
+    "register": "दर्ता",
+    "useasguest": " सामान्य प्रयोग",
+    "search":"खोजी",
+    "Password":"पासवर्ड",
+    "firstname":"नाम",
+    "lastname":"थर",
+    "email":"ई-मेल",
+    "phone":"फोन",
+    "password":"पासवर्ड",
+    "firstnamevalidator": "कृपया आफ्नो नाम प्रविष्ट गर्नुहोस्"
  }
