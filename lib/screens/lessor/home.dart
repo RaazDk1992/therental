@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:therental/screens/lessor/demand.dart';
 import 'package:therental/screens/lessor/request.dart';
 import 'package:therental/screens/search.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -45,7 +47,7 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         child: ListView(
           children: [
-            UserAccountsDrawerHeader(
+            const UserAccountsDrawerHeader(
               accountName: Text('John Doe'),
               accountEmail: Text('johndoe@example.com'),
               currentAccountPicture: CircleAvatar(

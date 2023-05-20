@@ -1,74 +1,85 @@
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:therental/routes/constraints.dart';
-import 'package:therental/translations/locale_keys.g.dart';
 
-class LoginPage extends StatelessWidget {
+import '../data/languagemenu.dart';
+
+class LoginPage extends StatefulWidget {
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  late String _username;
+  late String _password;
+  String? selectedValue = languageList.first.value;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Login Page'),
+      appBar: AppBar(
+        title: Row(
+          children: [
+            const Text('Login'),
+            const SizedBox(
+              width: 50.0,
+            ),
+            DropdownButton(
+              items: languageList,
+              style: TextStyle(color: Colors.white),
+              dropdownColor: Color.fromARGB(255, 20, 110, 245),
+              value: selectedValue,
+              onChanged: (value) => {
+                setState(() {
+                  selectedValue = value!;
+                })
+              },
+            )
+          ],
         ),
-        body: SafeArea(
+      ),
+      body: Center(
+        child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(3.0),
-            child: SafeArea(
-                child: Column(
-              children: [
-                Container(
-                  child: Image.asset("assets/images/banner.gif"),
+            padding: EdgeInsets.all(10.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      _username = value;
+                    });
+                  },
+                  decoration: InputDecoration(hintText: 'Username'),
                 ),
-                Material(
-                  child: Form(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextFormField(
-                          decoration: InputDecoration(
-                            labelText: LocaleKeys.Username.tr(),
-                            border: OutlineInputBorder(),
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                        TextFormField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            labelText: LocaleKeys.Password.tr(),
-                            border: const OutlineInputBorder(),
-                          ),
-                        ),
-                        const SizedBox(height: 32),
-                        ElevatedButton(
-                          child: Text(LocaleKeys.login.tr()),
-                          onPressed: () {
-                            try {
-                              Navigator.pushNamed(context, homePage);
-                            } catch (e) {
-                              //print(e.toString());
-                            }
-                          },
-                        ),
-                        const Text('OR,'),
-                        ElevatedButton(
-                          child: Text(
-                            LocaleKeys.useasguest.tr(),
-                            style: const TextStyle(color: Colors.white),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.red, // Background color
-                          ),
-                          onPressed: () async {
-                            await context.setLocale(Locale('ne'));
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
+                SizedBox(height: 20),
+                TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      _password = value;
+                    });
+                  },
+                  obscureText: true,
+                  decoration: InputDecoration(hintText: 'Password'),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    //TODO: Implement login functionality
+                  },
+                  child: Text('Login'),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    //TODO: Implement register functionality
+                  },
+                  child: Text('Register'),
                 ),
               ],
-            )),
+            ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
