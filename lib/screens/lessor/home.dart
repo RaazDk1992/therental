@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:therental/screens/lessor/demand.dart';
+import 'package:therental/screens/lessor/postaproduct.dart';
 import 'package:therental/screens/lessor/request.dart';
 import 'package:therental/screens/search.dart';
 import 'package:toggle_switch/toggle_switch.dart';
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     DemandPage(),
     RequestPage(),
     SuggestionsPage(),
-    PostProductPage(),
+    PostAProductPage()
   ];
 
   void _onItemTapped(int index) {
@@ -108,15 +109,6 @@ class SuggestionsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text('Suggestions Page'),
-    );
-  }
-}
-
-class PostProductPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Post Product Page'),
     );
   }
 }

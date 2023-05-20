@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    //TODO: Implement login functionality
+                    Navigator.pushNamed(context, homePage);
                   },
                   child: Text(
                     LocaleKeys.login.tr(),

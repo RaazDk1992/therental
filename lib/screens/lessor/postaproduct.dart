@@ -6,6 +6,14 @@ class PostAProductPage extends StatefulWidget {
 }
 
 class _PostAProductPageState extends State<PostAProductPage> {
+  String _productName = '';
+  String _productType = '';
+  String _other = '';
+  String _photo = '';
+  double _rate = 0.0;
+  String _per = '';
+  bool _termsAndConditions = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,129 +27,179 @@ class _PostAProductPageState extends State<PostAProductPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Name',
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 8.0),
-              const TextField(
-                decoration: InputDecoration(
-                  hintText: 'Enter name',
+                'Product Name:',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
                 ),
-              ),
-              const SizedBox(height: 16.0),
-              Text(
-                'Type',
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8.0),
               TextField(
+                onChanged: (value) {
+                  setState(() {
+                    _productName = value;
+                  });
+                },
                 decoration: InputDecoration(
-                  hintText: 'Enter type',
+                  hintText: 'Enter product name',
+                  border: OutlineInputBorder(),
                 ),
               ),
               SizedBox(height: 16.0),
               Text(
-                'Rate',
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                'Product Type:',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
               ),
               SizedBox(height: 8.0),
-              TextField(
+              DropdownButtonFormField<String>(
+                value: _productType,
+                onChanged: (value) {
+                  setState(() {
+                    _productType = value!;
+                  });
+                },
+                items: [
+                  DropdownMenuItem(
+                    value: 'Type 1',
+                    child: Text('Type 1'),
+                  ),
+                  DropdownMenuItem(
+                    value: 'Type 2',
+                    child: Text('Type 2'),
+                  ),
+                  DropdownMenuItem(
+                    value: 'Type 3',
+                    child: Text('Type 3'),
+                  ),
+                ],
                 decoration: InputDecoration(
-                  hintText: 'Enter rate',
+                  border: OutlineInputBorder(),
                 ),
               ),
               SizedBox(height: 16.0),
               Text(
-                'Per',
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                'Other:',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
               ),
               SizedBox(height: 8.0),
               TextField(
+                onChanged: (value) {
+                  setState(() {
+                    _other = value;
+                  });
+                },
                 decoration: InputDecoration(
-                  hintText: 'Enter per',
+                  hintText: 'Enter other details (if any)',
+                  border: OutlineInputBorder(),
                 ),
               ),
               SizedBox(height: 16.0),
               Text(
-                'Location',
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                'Photo:',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
               ),
               SizedBox(height: 8.0),
               TextField(
+                onChanged: (value) {
+                  setState(() {
+                    _photo = value;
+                  });
+                },
                 decoration: InputDecoration(
-                  hintText: 'Enter location',
+                  hintText: 'Enter photo URL',
+                  border: OutlineInputBorder(),
                 ),
               ),
               SizedBox(height: 16.0),
               Text(
-                'Phone',
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                'Rate:',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
               ),
               SizedBox(height: 8.0),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'Enter phone',
-                ),
+              Slider(
+                value: _rate,
+                onChanged: (value) {
+                  setState(() {
+                    _rate = value;
+                  });
+                },
+                min: 0.0,
+                max: 100.0,
+                divisions: 10,
+                label: _rate.toStringAsFixed(1),
               ),
               SizedBox(height: 16.0),
               Text(
-                'E-mail',
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                'Per:',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
               ),
               SizedBox(height: 8.0),
-              TextField(
+              DropdownButtonFormField<String>(
+                value: _per,
+                onChanged: (value) {
+                  setState(() {
+                    _per = value!;
+                  });
+                },
+                items: [
+                  DropdownMenuItem(
+                    value: 'Per 1',
+                    child: Text('Per 1'),
+                  ),
+                  DropdownMenuItem(
+                    value: 'Per 2',
+                    child: Text('Per 2'),
+                  ),
+                  DropdownMenuItem(
+                    value: 'Per 3',
+                    child: Text('Per 3'),
+                  ),
+                ],
                 decoration: InputDecoration(
-                  hintText: 'Enter e-mail',
+                  border: OutlineInputBorder(),
                 ),
               ),
               SizedBox(height: 16.0),
-              Text(
-                'Viber',
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 8.0),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'Enter viber',
-                ),
-              ),
-              SizedBox(height: 16.0),
-              Text(
-                'WhatsApp',
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 8.0),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'Enter WhatsApp',
-                ),
+              Row(
+                children: [
+                  Checkbox(
+                    value: _termsAndConditions,
+                    onChanged: (value) {
+                      setState(() {
+                        _termsAndConditions = value!;
+                      });
+                    },
+                  ),
+                  Text(
+                    'I agree to the terms and conditions',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 16.0),
-              Text(
-                'Photo',
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 8.0),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'Enter photo',
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text('Post'),
                 ),
-              ),
-              SizedBox(height: 16.0),
-              Text(
-                'Terms & Conditions',
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 8.0),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'Enter terms & conditions',
-                ),
-              ),
-              SizedBox(height: 16.0),
-              ElevatedButton(
-                child: Text('Post'),
-                onPressed: () {},
               ),
             ],
           ),
