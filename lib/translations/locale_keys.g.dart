@@ -16,5 +16,6 @@ abstract class  LocaleKeys {
   static const clothing = 'clothing';
   static const house = 'house';
   static const retail = 'retail';
+  static const home = 'home';
 
 }

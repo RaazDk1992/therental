@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../data/languagemenu.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:therental/routes/constraints.dart';
+import 'package:therental/translations/locale_keys.g.dart';
+import 'package:flutter/rendering.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -28,8 +32,11 @@ class _LoginPageState extends State<LoginPage> {
               dropdownColor: Color.fromARGB(255, 20, 110, 245),
               value: selectedValue,
               onChanged: (value) => {
+                // ignore: avoid_print
+
                 setState(() {
                   selectedValue = value!;
+                  changeLocale(selectedValue);
                 })
               },
             )
@@ -49,7 +56,9 @@ class _LoginPageState extends State<LoginPage> {
                       _username = value;
                     });
                   },
-                  decoration: InputDecoration(hintText: 'Username'),
+                  decoration: InputDecoration(
+                    hintText: LocaleKeys.Username.tr(),
+                  ),
                 ),
                 SizedBox(height: 20),
                 TextField(
@@ -59,21 +68,27 @@ class _LoginPageState extends State<LoginPage> {
                     });
                   },
                   obscureText: true,
-                  decoration: InputDecoration(hintText: 'Password'),
+                  decoration: InputDecoration(
+                    hintText: LocaleKeys.Password.tr(),
+                  ),
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     //TODO: Implement login functionality
                   },
-                  child: Text('Login'),
+                  child: Text(
+                    LocaleKeys.login.tr(),
+                  ),
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     //TODO: Implement register functionality
                   },
-                  child: Text('Register'),
+                  child: Text(
+                    LocaleKeys.register.tr(),
+                  ),
                 ),
               ],
             ),
@@ -81,5 +96,9 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  changeLocale(val) async {
+    await context.setLocale(Locale(val));
   }
 }

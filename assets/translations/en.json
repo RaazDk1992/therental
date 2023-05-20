@@ -13,6 +13,7 @@
    "firstnamevalidator": "Please enter your first name",
    "clothing":"Clothing",
    "house": "House",
-   "retail": "Retail"
+   "retail": "Retail",
+   "home":"Home"
 
 }

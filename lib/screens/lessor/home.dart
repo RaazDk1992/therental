@@ -5,6 +5,9 @@ import 'package:therental/screens/lessor/request.dart';
 import 'package:therental/screens/search.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
+import '../../translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -30,7 +33,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text(LocaleKeys.home.tr()),
         actions: [
           IconButton(
             onPressed: () {

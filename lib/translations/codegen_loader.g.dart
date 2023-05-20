@@ -29,7 +29,8 @@ class CodegenLoader extends AssetLoader{
   "firstnamevalidator": "Please enter your first name",
   "clothing": "Clothing",
   "house": "House",
-  "retail": "Retail"
+  "retail": "Retail",
+  "home": "Home"
 };
 static const Map<String,dynamic> ne = {
   "login": "लग-इन",
@@ -45,7 +46,8 @@ static const Map<String,dynamic> ne = {
   "firstnamevalidator": "कृपया आफ्नो नाम प्रविष्ट गर्नुहोस्",
   "clothing": "कपडा",
   "house": "घर",
-  "retail": "जग्गा"
+  "retail": "खुद्रा",
+  "home": "गृह"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "ne": ne};
 }
