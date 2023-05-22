@@ -4,9 +4,19 @@ import 'package:therental/routes/approutes.dart';
 import 'package:therental/screens/login.dart';
 import 'package:therental/translations/codegen_loader.g.dart';
 
+import 'package:flutter/foundation.dart';
+// core FlutterFire dependency
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+// FlutterFire's Firebase Cloud Messaging plugin
+import 'package:firebase_messaging/firebase_messaging.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(
     EasyLocalization(

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "749175189990",
+    "project_id": "therental-test-9ae95",
+    "storage_bucket": "therental-test-9ae95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749175189990:android:cfee4c8e9448659f83a627",
+        "android_client_info": {
+          "package_name": "com.example.therental"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749175189990-1lhd8ssr7oejg8h59h2fitv8j57qbkv3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaGanV0w39BDOVy8Muj6v6X2scHL7GR2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749175189990-1lhd8ssr7oejg8h59h2fitv8j57qbkv3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "749175189990-81isah1birrcbg0tflq4q7bsl3ve4f16.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.therental"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

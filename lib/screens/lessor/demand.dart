@@ -17,7 +17,8 @@ class DemandPage extends StatelessWidget {
     return Scaffold(
         body: ListView.separated(
       itemBuilder: (context, index) {
-        return SafeArea(
+        return SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
           child: Padding(
             padding: EdgeInsets.all(2.0),
             child: Row(
@@ -47,23 +48,6 @@ class DemandPage extends StatelessWidget {
                   width: SIZE_MINIMAL,
                 ),
                 Text(publisher[index]),
-                RatingBar.builder(
-                  ignoreGestures: true,
-                  initialRating: ratings[index],
-                  minRating: 0,
-                  direction: Axis.horizontal,
-                  allowHalfRating: true,
-                  itemCount: 5,
-                  itemSize: 15,
-                  itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                  itemBuilder: (context, _) => Icon(
-                    Icons.star,
-                    color: Colors.amber,
-                  ),
-                  onRatingUpdate: (rating) {
-                    // print(rating);
-                  },
-                ),
                 const SizedBox(
                   width: SIZE_SMALL,
                 ),

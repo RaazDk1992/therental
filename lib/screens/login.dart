@@ -1,4 +1,6 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:therental/firebase/firebasesetup.dart';
 
 import '../data/languagemenu.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -14,7 +16,17 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   late String _username;
   late String _password;
+  late String _token;
   String? selectedValue = languageList.first.value;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    super.initState();
+    requestPermissions();
+    getToken();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -100,5 +112,16 @@ class _LoginPageState extends State<LoginPage> {
 
   changeLocale(val) async {
     await context.setLocale(Locale(val));
+  }
+
+  //**
+  //
+  // */
+
+  void getToken() async {
+    await FirebaseMessaging.instance.getToken().then((token) => setState(() {
+          _token = token!;
+          print("Got token :--" + _token);
+        }));
   }
 }
