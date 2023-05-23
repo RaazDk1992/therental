@@ -41,6 +41,15 @@ class RentalApp extends StatefulWidget {
 class _RentalAppState extends State<RentalApp> {
   // Locale _locale = Locale.fromSubtags('en');
 
+  late String _token;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    registerNotifications();
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -64,5 +73,36 @@ class _RentalAppState extends State<RentalApp> {
       localizationsDelegates: context.localizationDelegates,
       home: LoginPage(),
     );
+  }
+
+  void registerNotifications() async {
+    final messaging = FirebaseMessaging.instance;
+    await Firebase.initializeApp();
+
+    NotificationSettings settings = await messaging.requestPermission(
+      alert: true,
+      announcement: false,
+      badge: true,
+      carPlay: false,
+      criticalAlert: false,
+      provisional: false,
+      sound: true,
+    );
+
+    if (settings.authorizationStatus == AuthorizationStatus.authorized) {
+      await FirebaseMessaging.instance.getToken().then((token) => setState(() {
+            _token = token!;
+            print("Got token :--" + _token);
+          }));
+    }
+
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      print('Got a message whilst in the foreground!');
+      print('Message data: ${message.data}');
+
+      if (message.notification != null) {
+        print('Message also contained a notification: ${message.notification}');
+      }
+    });
   }
 }
