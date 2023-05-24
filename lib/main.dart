@@ -75,9 +75,14 @@ class _RentalAppState extends State<RentalApp> {
     );
   }
 
+/**
+ * 
+ * Firebase setup.
+ */
   void registerNotifications() async {
     final messaging = FirebaseMessaging.instance;
     await Firebase.initializeApp();
+    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
     NotificationSettings settings = await messaging.requestPermission(
       alert: true,
@@ -104,5 +109,9 @@ class _RentalAppState extends State<RentalApp> {
         print('Message also contained a notification: ${message.notification}');
       }
     });
+  }
+
+  Future _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+    print("Handling a background message: ${message.messageId}");
   }
 }
